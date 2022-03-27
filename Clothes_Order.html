@@ -1,0 +1,113 @@
+옷 주문>
+<html lang="kor">
+<head>
+    <script type="text/javascript">
+        function checkNumber(event) { /* checkNumber() 함수는 keyboard event를 입력받는다 */
+  if(event.key === '.' /* 입력된 값이 숫자이면 true를 리턴하여 input에 입력되게 하고, */
+     || event.key === '-' /* 입력된 값이 숫자가 아니면  false를 리턴하여 input에 입력되지 못하게 된다. */
+     || event.key >= 0 && event.key <= 9) {
+    return true;
+  }
+  
+  return false;
+}
+    </script>
+    <style>
+        .container{
+            width: 650px;
+            margin:0 auto;
+        }
+        ul{ /* 순서가 없는 목록에 적용할 스타일 */
+            list-style-type: none; /* 불릿 없애기 */
+        }
+        label.title{ /* class가 title인 label에 적용할 스타일 */
+            font-weight: bold; /* 글자를 굵게함 */
+            float: left; /* 왼쪽으로 배치함 */
+            width: 100px; /* 너비 100px */
+        }
+        div.center { /* class가 center인 div에 적용할 스타일 */
+            text-align: cneter; /* 가운데로 정렬 */ 
+        }
+        fieldset { /* fieldset에 적용할 스타일 */
+            margin: 20px 15px; /* 상하마진 20px, 좌우마진 15px */
+        }
+        fieldset legend { /* fieldset제목에 적용할 스타일 */
+            font-size: 20px; /* 글자 크기 20px */
+            font-weight: bold; /* 글자를 굵게함 */
+            color: blueviolet; /* 글자색 = bluevoilet */
+        }
+        ul li { /* 목록의 항목 */ 
+             margin-bottom: 10px; /* 아래마진 10px */ 
+            }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>옷 주문서 작성하기</title>
+</head>
+<body>
+    <div class="container">
+        <h1>옷 주문서</h1>
+        <form>
+            <fieldset>
+                <legend>개인 정보</legend>
+                <ul>
+                    <li>
+                        <label for="uname" class="title">이름</label>
+                        <input type="text" id="uname" placeholder="여백없이 입력" required>
+                    </li>
+                    <li>
+                        <label for="tel1" class="title">연락처</label> 
+                        <input type='text' onkeypress='return checkNumber(event)' placeholder="연락가능한 번호">
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>배송지</legend>
+                <ul>
+                    <li>
+                        <lable for="address1" class="title">주소</lable>
+                        <input type="text" id="address1" size=35 placeholder="예) 상대원2동 xxxx번지 1층">
+                    </li>
+                    <li>
+                        <label for="address2" class="title">우편번호</label>
+                        <input type="text" id="address2" required>  
+                    </li>
+                    <li>
+                        <lable for="tel2" class="title">전화번호</lable>
+                        <input type='text' onkeypress='return checkNumber(event)' required>
+                    </li>
+                    <li>
+                        <label for="Details" class="title">상세사항</label>
+                        <textarea cols="50" rows="4" id="Details"></textarea>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>주문 정보</legend>
+                <ul>
+                    <li>
+                        <img src="./images/mark.jpeg" style="display:block" height="200px" width="200px" >
+                        <label><input type="checkbox" >Markgonzales 후드티</label>
+                        <label><input type="number" value="0" min="0" max="99">개</label>
+                    </li>
+                    <li>
+                        <img src="./images/airforce.webp" style="display:block" height="200px" width="200px">
+                        <label><input type="checkbox" >Air Force 1</label>
+                        <label><input type="number" value="0" min="0" max="99">개</label>
+                    </li>
+                    <li>
+                        <img src="./images/mmlg.jpeg" style="display:block" height="200px" width="200px">
+                        <label><input type="checkbox" >엠엠엘지 맨투맨</label>
+                        <label><input type="number" value="0" min="0" max="99">개</label>
+                    </li>
+                </ul>
+                <div class = "center">
+                    <input type="submit" value="주문하기">
+                    <input type="submit" value="다시 작성하기">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
