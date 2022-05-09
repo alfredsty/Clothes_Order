@@ -7,6 +7,8 @@
 ## 설명
 * HTML을 사용하여 내가 좋아하는 옷 주문서를 만들어보았다.
 * input박스에 숫자만 입력가능하도록 기능을 구현할 때 type을 num으로 하면 해결이 되지만 maxlength구현이 안되기 때문에 Script로 event를 사용하여 문자를 제어했다.
+* <img width="708" alt="image" src="https://user-images.githubusercontent.com/102028778/167327338-fe7b52ec-22b7-43d3-aad8-6c21f4ad9883.png">
+
 
 ## Tools
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-007396.svg?&style=for-the-badge&logo=Visual%20Studio%20Code&logocolor=white)
